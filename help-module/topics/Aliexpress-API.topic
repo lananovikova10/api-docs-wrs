@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://helpserver.labs.jb.gg/help/schemas/mvp/html-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://helpserver.labs.jb.gg/help/schemas/mvp/topic.v2.xsd"
+       id="Aliexpress-API"
+       title="Get products API">
+
+   <chapter id="aliexpress.solution.product.list.get">
+    <title>GET aliexpress.solution.product.list.get</title>
+    <p>Returns a list of all your items in a certain status.</p>
+
+    Below is the table with merged cells.
+
+    <table>
+     <tr>
+      <td><p>Parameter</p></td>
+      <td></td>
+      <td><p>Type</p></td>
+      <td><p>Mandatory</p></td>
+      <td><p>Description</p></td>
+     </tr>
+     <tr>
+      <td rowspan="16">aeop_a_e_product_list_query</td>
+      <td></td>
+      <td>ItemListQuery[]</td>
+      <td>No</td>
+      <td>Объект.</td>
+     </tr>
+     <tr>
+      <td>product_status_type</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Item status on AliExpress. Can be onSelling, offline, pending and editingRequired.</td>
+     </tr>
+     <tr>
+      <td>current_page</td>
+      <td>int</td>
+      <td>No</td>
+      <td>Results output page, defaults to 1.</td>
+     </tr>
+     <tr>
+      <td>excepted_product_ids</td>
+      <td>list</td>
+      <td>No</td>
+      <td>A list of product identifiers that you want to exclude from the response.</td>
+     </tr>
+     <tr>
+      <td>off_line_time</td>
+      <td>list</td>
+      <td>No</td>
+      <td>For products in offline status. How many days have passed since they were removed from publication.
+</td>
+     </tr>
+     <tr>
+      <td>owner_member_id</td>
+      <td>string</td>
+      <td>No</td>
+      <td>Login of the owner of the product.
+</td>
+     </tr>
+     <tr>
+      <td>page_size</td>
+      <td>int</td>
+      <td>No</td>
+      <td>The number of products on each result page.
+</td>
+     </tr>
+     <tr>
+      <td>product_id</td>
+      <td>int</td>
+      <td>No</td>
+      <td>Product ID on AliExpress.
+</td>
+     </tr>
+     <tr>
+      <td>product_subject</td>
+      <td>string</td>
+      <td>No</td>
+      <td>Fuzzy search by product English name.
+</td>
+     </tr>
+     <tr>
+      <td>ws_display</td>
+      <td>string</td>
+      <td>No</td>
+      <td>The reason why the item is taken off sale. 
+       Can be expire_offline; user_offline, violate_offline, punish_offline and grade_offline.</td>
+     </tr>
+     <tr>
+      <td>have_national_quote</td>
+      <td>string</td>
+      <td>No</td>
+      <td>Does the product have a country quota: y if yes, n if no.</td>
+     </tr>
+     <tr>
+      <td>group_id</td>
+      <td>int</td>
+      <td>No</td>
+      <td>Product group ID.
+</td>
+     </tr>
+     <tr>
+      <td>gmt_create_start</td>
+      <td>date</td>
+      <td>No</td>
+      <td>Search for items created after a specified date and time in the format yyyyy-MM-dd hh:mm:ss.
+</td>
+     </tr>
+     <tr>
+      <td>gmt_create_end</td>
+      <td>date</td>
+      <td>No</td>
+      <td>Search for items created after a specified date and time in the format yyyyy-MM-dd hh:mm:ss.
+</td>
+     </tr>
+     <tr>
+      <td>gmt_modified_start</td>
+      <td>date</td>
+      <td>No</td>
+      <td>Search for items created before a specified date and time in the format yyyyy-MM-dd hh:mm:ss.</td>
+     </tr>
+     <tr>
+      <td>gmt_modified_end</td>
+      <td>date</td>
+      <td>No</td>
+      <td>Search for items changed before a specified date and time in the format yyyyy-MM-dd hh:mm:ss.
+</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td>sku_code</td>
+      <td>string</td>
+      <td>No</td>
+      <td>The SKU of a product: its part number or barcode.
+</td>
+     </tr>
+    </table>
+
+    Below is how we hacked it ATM.
+
+    <table>
+     <tr><td><p>Parameter</p></td>
+      <td><p>Type</p></td>
+      <td><p>Mandatory</p></td>
+      <td><p>Description</p></td>
+     </tr>
+     <tr><td>aeop_a_e_product_list_query</td><td>ItemListQuery[]</td><td>No</td><td>Объект.</td></tr>
+     <tr><td>↳ product_status_type</td><td>string</td><td>Yes</td><td> Item status on AliExpress. Can be onSelling, offline, pending and editingRequired.</td></tr>
+     <tr><td>↳ current_page</td><td>int</td><td>No</td><td>Results output page, defaults to 1.</td></tr>
+     <tr><td>↳ excepted_product_ids</td><td>list</td><td>No</td><td>A list of product identifiers that you want to exclude from the response.</td></tr>
+     <tr><td>↳ off_line_time</td><td>list</td><td>No</td><td>For products in offline status. How many days have passed since they were removed from publication.
+</td></tr>
+     <tr><td>↳ owner_member_id</td><td>string</td><td>No</td><td>Login of the owner of the product.
+</td></tr>
+     <tr><td>↳ page_size</td><td>int</td><td>No</td><td>The number of products on each result page.
+</td></tr>
+     <tr><td>↳ product_id</td><td>int</td><td>No</td><td>Product ID on AliExpress.
+</td></tr>
+     <tr><td>↳ product_subject</td><td>string</td><td>No</td><td>Fuzzy search by product English name.
+</td></tr>
+     <tr><td>↳ ws_display</td><td>string</td><td>No</td><td>The reason why the item is taken off sale. 
+       Can be expire_offline; user_offline, violate_offline, punish_offline and grade_offline.</td></tr>
+     <tr><td>↳ have_national_quote</td><td>string</td><td>No</td><td>Does the product have a country quota: y if yes, n if no.</td></tr>
+     <tr><td>↳ group_id</td><td>int</td><td>No</td><td>Product group ID.
+</td></tr>
+     <tr><td>↳ gmt_create_start</td><td>date</td><td>No</td><td>Search for items created after a specified date and time in the format yyyyy-MM-dd hh:mm:ss.
+</td></tr>
+     <tr><td>↳ gmt_create_end</td><td>date</td><td>No</td><td>Search for items created before a specified date and time in the format yyyyy-MM-dd hh:mm:ss.
+</td></tr>
+     <tr><td>↳ gmt_modified_start</td><td>date</td><td>No</td><td>Search for items changed before a specified date and time in the format yyyyy-MM-dd hh:mm:ss.
+</td></tr>
+     <tr><td>↳ gmt_modified_end</td><td>date</td><td>No</td><td>Search for items changed before a specified date and time in the format yyyyy-MM-dd hh:mm:ss.
+</td></tr>
+     <tr><td>↳ sku_code</td><td>string</td><td>No</td><td>The SKU of a product: its part number or barcode.
+</td></tr>
+    </table>
+
+    <!--A table with a list-->
+
+    <table>
+     <tr>
+      <td><p>Parameter</p></td>
+      <td><p>Type</p></td>
+      <td><p>Mandatory</p></td>
+      <td><p>Description</p></td>
+      <td><p>Values</p></td>
+     </tr>
+     <tr>
+      <td>
+       <p>aeop_a_e_product_list_query</p>
+      </td>
+      <td>
+       <p>ItemListQuery[]</p>
+      </td>
+      <td>
+       <p>No</p>
+      </td>
+      <td>
+       <p>Object</p>
+      </td>
+      <td>
+       <list>
+        <li><p><code>product_status_type</code> (string) </p></li>
+        <li><p><code>current_page</code> (int)</p></li>
+        <li><p><code>excepted_product_ids</code> (list)</p></li>
+        <li><p><code>off_line_time</code> (list)</p></li>
+        <li><p><code>owner_member_id</code> (string)</p></li>
+        <li><p><code>page_size</code> (int)</p></li>
+        <li><p><code>product_id</code> int)</p></li>
+        <li><p><code>product_subject</code> (string)</p></li>
+        <li><p><code>ws_display</code> (string)</p></li>
+        <li><p><code>have_national_quote</code> (boolean)</p></li>
+       </list>
+      </td>
+     </tr>
+    </table>
+
+    And a version with a deflist.
+
+    <deflist>
+     <def title="Parameter">
+      <p><code>aeop_a_e_product_list_query</code> (ItemListQuery[]) Type: Object.</p>
+      <table>
+      <tr>
+       <td><p>Parameter</p></td>
+       <td><p>Type</p></td>
+       <td><p>Mandatory</p></td>
+       <td><p>Description</p></td>
+      </tr>
+       <tr>
+        <td>product_status_type</td>
+        <td>string</td>
+        <td>Да</td>
+        <td>Product status on AliExpress. It can be onSelling, offline, auditing and editingRequired.</td>
+       </tr>
+       <tr>
+        <td>current_page</td>
+        <td>int</td>
+        <td>Нет</td>
+        <td>Results page, defaults to 1.</td>
+       </tr>
+       <tr>
+        <td>excepted_product_ids</td>
+        <td>list</td>
+        <td>Нет</td>
+        <td>List of product identifiers to be excluded from the answer.</td>
+       </tr>
+       <tr>
+        <td>off_line_time</td>
+        <td>list</td>
+        <td>Нет</td>
+        <td>For products in offline status. How many days have passed since they were taken out of publication.</td>
+       </tr>
+       <tr>
+        <td>owner_member_id</td>
+        <td>string</td>
+        <td>Нет</td>
+        <td>Product's owner ID.</td>
+       </tr>
+       <tr>
+        <td>page_size</td>
+        <td>int</td>
+        <td>Нет</td>
+        <td>Number of items on each result page.</td>
+       </tr>
+       <tr>
+        <td>product_id</td>
+        <td>int</td>
+        <td>Нет</td>
+        <td>AliExpress product ID.</td>
+       </tr>
+       <tr>
+        <td>product_subject</td>
+        <td>string</td>
+        <td>Нет</td>
+        <td>Fuzzy search by English product name.</td>
+       </tr>
+       <tr>
+        <td>ws_display</td>
+        <td>string</td>
+        <td>Нет</td>
+        <td>The reason why the item is taken off sale. Can be expire_offline; user_offline, violate_offline, punish_offline and grade_offline.</td>
+       </tr>
+       <tr>
+        <td>have_national_quote</td>
+        <td>string</td>
+        <td>Нет</td>
+        <td>If the product has a country quota:y if yes, n if no.</td>
+       </tr>
+       <tr>
+        <td>group_id</td>
+        <td>int</td>
+        <td>Нет</td>
+        <td>Product group identifier.</td>
+       </tr>
+       <tr>
+        <td>gmt_create_start</td>
+        <td>date</td>
+        <td>Нет</td>
+        <td>Search for products created after the specified date and time in the format yyyy-MM-dd hh:mm:ss.</td>.
+       </tr>
+       <tr>
+        <td>gmt_create_end</td>
+        <td>date</td>
+        <td>Нет</td>
+        <td>Search for products created before the specified date and time in the format yyyy-MM-dd hh:mm:ss.</td>.
+       </tr>
+       <tr>
+        <td>gmt_modified_start</td>
+        <td>date</td>
+        <td>Нет</td>
+        <td>Search for products changed before the specified date and time in the format yyyy-MM-dd hh:mm:ss.</td>
+       </tr>
+      </table>
+     </def>
+    </deflist>
+   </chapter>
+ <chapter title="Create a product">
+  <p>POST /api/v1/product/create</p>
+  <p>As a result of the query a group of tasks (group_id parameter) is formed for uploading goods to the platform.
+   Tasks execution status can be obtained using GET /api/v1/tasks?group_id= method.</p>
+  <table>
+   <tr>
+    <td>Parameter</td>
+    <td></td>
+    <td>Type</td>
+    <td>Mandatory?</td>
+    <td>Description</td>
+   </tr>
+   <tr>
+    <td rowspan="16">products</td>
+    <td></td>
+    <td>array</td>
+    <td>Да</td>
+    <td>Массив, в котором передаются объекты товаров.</td>
+   </tr>
+   <tr>
+    <td>aliexpress_category_id</td>
+    <td>int</td>
+    <td>Да</td>
+    <td>Идентификатор категории нижнего уровня. <a href="https://business.aliexpress.ru/docs/categories#heading-kak-poluchit-kategoriyu-nizhnego-urovnya">Как получить категорию нижнего уровня</a>.</td>
+   </tr>
+   <tr>
+    <td rowspan="5">attribute_list</td>
+    <td>array</td>
+    <td>Да, если в категории есть хотя бы один обязательный параметр.</td>
+    <td>Характеристики товара, полученные в массиве properties метода <a href="https://business.aliexpress.ru/docs/categories#heading-poluchit-atributi-kategorii">POST /api/v1/categories/get</a>.</td>
+   </tr>
+   <tr>
+    <td>attribute_name</td>
+    <td>string</td>
+    <td>Нет</td>
+    <td>Название характеристики, значение properties.name из ответа метода <a href="https://business.aliexpress.ru/docs/categories#heading-poluchit-atributi-kategorii">POST /api/v1/categories/get</a>. Чтобы избежать ошибок, не передавайте характеристику Название бренда — id:2. Это значение будет передано из параметра brand_name автоматически. Вы также можете задать своё название характеристики.</td>
+   </tr>
+   <tr>
+    <td>attribute_id</td>
+    <td>int</td>
+    <td>Нет</td>
+    <td>Идентификатор названия характеристики, значение properties.id из ответа метода <a href="https://business.aliexpress.ru/docs/categories#heading-poluchit-atributi-kategorii">POST /api/v1/categories/get</a>, преобразованное из типа string &gt; int. Чтобы задать своё название характеристики, укажите значение -1.</td>
+   </tr>
+   <tr>
+    <td>attribute_value</td>
+    <td>string</td>
+    <td>Нет</td>
+    <td>Значение характеристики, значение values.name из ответа метода <a href="https://business.aliexpress.ru/docs/categories#heading-poluchit-informatsiyu-o-znacheniyah-atributa">POST /api/v1/categories/values-dictionary</a>. В запросе укажите `is_sku_property`:false. Вы также можете задать своё значение характеристики.</td>
+   </tr>
+   <tr>
+    <td>attribute_value_id</td>
+    <td>int</td>
+    <td>Нет</td>
+    <td>Идентификатор значения характеристики, значение values.id из ответа метода <a href="https://business.aliexpress.ru/docs/categories#heading-poluchit-informatsiyu-o-znacheniyah-atributa">POST /api/v1/categories/values-dictionary</a>, преобразованное из типа string &gt; int. В запросе укажите `is_sku_property`:false. Чтобы задать своё значение характеристики, укажите значение -1.</td>
+   </tr>
+   <tr>
+    <td>brand</td>
+    <td>string</td>
+    <td>Да</td>
+    <td>Название бренда. Можно передавать только бренды, которые вы <a href="https://business.aliexpress.ru/help/article/1060585183">добавили в свой магазин</a>. Посмотреть <a href="https://business.aliexpress.ru/docs/brand">список добавленных брендов</a>. Если бренда нет, передайте None.</td>
+   </tr>
+   <tr>
+    <td>freight_template_id</td>
+    <td>int</td>
+    <td>Да</td>
+    <td>Идентификатор шаблона доставки. <a href="https://business.aliexpress.ru/docs/local-create-products#template">Как получить идентификатор шаблона</a>.</td>
+   </tr>
+   <tr>
+    <td>inventory_deduction_strategy</td>
+    <td>string</td>
+    <td>Да</td>
+    <td>В какой момент будет вычитаться остаток товара. Обязательно передайте значение payment_success_deduct — в момент оплаты заказа.</td>
+   </tr>
+   <tr>
+    <td>language</td>
+    <td>string</td>
+    <td>Да</td>
+    <td>Язык карточки товара по умолчанию. Передайте значение ru.</td>
+   </tr>
+   <tr>
+    <td>lot_num</td>
+    <td>string</td>
+    <td>Нет</td>
+    <td>Количество товара в лоте. Обязательный параметр, если выбран метод продаж лотами (package_type: true).</td>
+   </tr>
+   <tr>
+    <td>main_image_urls_list</td>
+    <td>[string]</td>
+    <td>Да</td>
+    <td>Массив ссылок на основные изображения товара. Все ссылки должны быть прямыми, то есть вести на изображение на вашем сервере или на CDN AliExpress. От 1 до 6 ссылок. Требования к изображению: <list><li>размер от 800 х 800;</li> <li> формат: JPG, JPEG или PNG;</li> <li> соотношение: 1:1 или 3:4.</li> </list></td>
+   </tr>
+   <tr>
+    <td rowspan="3">multi_language_subject_list</td>
+    <td></td>
+    <td>array</td>
+    <td>Да</td>
+    <td>Список названий товара на нескольких языках.</td>
+   </tr>
+   <tr>
+    <td>language</td>
+    <td></td>
+    <td>string</td>
+    <td>Да</td>
+    <td>Язык названия товара.</td>
+   </tr>
+   <tr>
+    <td>subject</td>
+    <td></td>
+    <td>string</td>
+    <td>Да</td>
+    <td>Название товара на языке.</td>
+   </tr>
+   <tr>
+    <td>package_height</td>
+    <td></td>
+    <td>int</td>
+    <td>Да</td>
+    <td>Высота упаковки в сантиметрах. Может принимать значение от 1 до 700 см.</td>
+   </tr>
+   <tr>
+    <td>package_length</td>
+    <td></td>
+    <td>int</td>
+    <td>Да</td>
+    <td>Длина упаковки в сантиметрах. Может принимать значение от 1 до 700 см.</td>
+   </tr>
+   <tr>
+    <td>package_type</td>
+    <td></td>
+    <td>boolean</td>
+    <td>Нет</td>
+    <td>Метод продаж: true - лотами, false - поштучно.</td>
+   </tr>
+   <tr>
+    <td>package_width</td>
+    <td></td>
+    <td>int</td>
+    <td>Да</td>
+    <td>Ширина упаковки в сантиметрах. Может принимать значение от 1 до 700 см.</td>
+   </tr>
+   <tr>
+    <td>weight</td>
+    <td></td>
+    <td>string</td>
+    <td>Да</td>
+    <td>Вес товара в упаковке (используется для расчёта доставки). Может принимать значение от 0,01 до 700 кг.</td>
+   </tr>
+   <tr>
+    <td>product_unit</td>
+    <td></td>
+    <td>int</td>
+    <td>Да</td>
+    <td>Единица измерения товара:00000013 — пара,100000014 — упаĸовĸа/упаĸовĸи,100000015 — штуĸа/штуĸи,100000017 — ĸомплеĸт/ĸомплеĸты,100000019 — ĸвадратный метр.</td>
+   </tr>
+   <tr>
+    <td>service_policy_id</td>
+    <td></td>
+    <td>int</td>
+    <td>Да</td>
+    <td>Идентификатор шаблон услуг, описывающего условия возврата. Передайте значение 0.</td>
+   </tr>
+   <tr>
+    <td>shipping_lead_time</td>
+    <td></td>
+    <td>int</td>
+    <td>Да</td>
+    <td>Время на отправку заказа (время, за которое вы обязуетесь ввести трек-номер, если у вас своя логистика. Для FBS AliExpress и Почты России трек-номер генерируется автоматически). Значение от 1 до 30.</td>
+   </tr>
+   <tr>
+    <td>size_chart_id</td>
+    <td></td>
+    <td>int</td>
+    <td>Нет</td>
+    <td>Идентификатор таблицы размеров. Нужен для одежды, обуви, аксессуаров и белья. Чтобы получить id, откройте в личном кабинете продавца Товары → Таблица размеров. Выберите таблицу и нажмите Изменить. Скопируйте id из URL.</td>
+   </tr>
+   <tr>
+    <td>tnved_codes</td>
+    <td></td>
+    <td>[string]</td>
+    <td>Да</td>
+    <td>Классификатор товаров из товарной номенĸлатуры внешнеэĸономичесĸой деятельности, обязательный для <a href="https://getmark.ru/blog/o-markirovke/obyazatelnaya-markirovka-tovarov-kod-pravila-ehtapy-sroki/">некоторых категорий</a> товаров.</td>
+   </tr>
+   <tr>
+    <td>gtin</td>
+    <td></td>
+    <td>string</td>
+    <td>Нет</td>
+    <td>Глобальный номер товарной продуĸции в единой международной базе товаров GS1, для автоматического получения ТНВЭД или ОКПД2.</td>
+   </tr>
+   <tr>
+    <td>okpd2_codes</td>
+    <td></td>
+    <td>[string]</td>
+    <td>Да, для <a href="https://getmark.ru/blog/o-markirovke/obyazatelnaya-markirovka-tovarov-kod-pravila-ehtapy-sroki/">некоторых категорий</a> товаров.</td>
+    <td>Общероссийсĸий ĸлассифиĸатор продуĸции по видам эĸономичесĸой деятельности. Для товаров, производимых в РФ.</td>
+   </tr>
+  </table>
+ </chapter>
+</topic>

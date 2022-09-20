@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://helpserver.labs.jb.gg/help/schemas/mvp/product-profile.dtd">
+
+<instance-profile id="api"
+                 name="api"
+                 start-page="api.topic">
+
+    <toc-element topic="api.topic"/>
+    <toc-element topic="complex-api.md"/>
+    <toc-element topic="Aliexpress-API-MD.md"/>
+    <toc-element topic="Aliexpress-API.topic"/>
+    <toc-element topic="Ozon-API.topic"/>
+</instance-profile>
