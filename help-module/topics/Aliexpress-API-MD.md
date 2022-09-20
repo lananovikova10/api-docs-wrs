@@ -1,6 +1,6 @@
 [//]: # (title: Get products API MD)
 
-## Получить схему товара
+## Получить схему товара {id="forinclude"}
 
 `GET aliexpress.solution.product.schema.get`
 

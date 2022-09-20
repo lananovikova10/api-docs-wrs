@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rules SYSTEM "https://helpserver.labs.jb.gg/help/schemas/mvp/redirection-rules.dtd">
+<rules>
+    <rule id="725d273f">
+        <description>Created after removal of "Syntetic Ecom API" from api</description>
+        <accepts>Ozon-API.html</accepts>
+    </rule>
+</rules>

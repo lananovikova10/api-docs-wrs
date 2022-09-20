@@ -6,11 +6,12 @@
        id="Aliexpress-API"
        title="Get products API">
 
-   <chapter id="aliexpress.solution.product.list.get">
-    <title>GET aliexpress.solution.product.list.get</title>
+   <chapter id="Get_products">
+    <title>Get products</title>
+    <p>GET aliexpress.solution.product.list.get</p>
     <p>Returns a list of all your items in a certain status.</p>
 
-    Below is the table with merged cells.
+    <p>Below is the table with merged cells.</p>
 
     <table>
      <tr>
@@ -84,7 +85,7 @@
       <td>ws_display</td>
       <td>string</td>
       <td>No</td>
-      <td>The reason why the item is taken off sale. 
+      <td>The reason why the item is taken off sale.
        Can be expire_offline; user_offline, violate_offline, punish_offline and grade_offline.</td>
      </tr>
      <tr>
@@ -137,7 +138,7 @@
      </tr>
     </table>
 
-    Below is how we hacked it ATM.
+    <p>Below is how we hacked it ATM.</p>
 
     <table>
      <tr><td><p>Parameter</p></td>
@@ -159,7 +160,7 @@
 </td></tr>
      <tr><td>↳ product_subject</td><td>string</td><td>No</td><td>Fuzzy search by product English name.
 </td></tr>
-     <tr><td>↳ ws_display</td><td>string</td><td>No</td><td>The reason why the item is taken off sale. 
+     <tr><td>↳ ws_display</td><td>string</td><td>No</td><td>The reason why the item is taken off sale.
        Can be expire_offline; user_offline, violate_offline, punish_offline and grade_offline.</td></tr>
      <tr><td>↳ have_national_quote</td><td>string</td><td>No</td><td>Does the product have a country quota: y if yes, n if no.</td></tr>
      <tr><td>↳ group_id</td><td>int</td><td>No</td><td>Product group ID.

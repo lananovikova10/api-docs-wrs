@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://helpserver.labs.jb.gg/help/schemas/mvp/html-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://helpserver.labs.jb.gg/help/schemas/mvp/topic.v2.xsd"
+       id="Syntetic-API-method"
+       title="Syntetic API method">
+    <chapter title="Create a new Account">
+        <p><format style="bold" color="CornflowerBlue">POST</format><code>/v1/accounts</code></p>
+        <table style="none">
+            <tr>
+                <td>
+                    <p><code>client_id</code> </p>
+                    <p><format color="Crimson">required</format> </p>
+                </td>
+                <td>
+                    <p><format color="Gray">string</format> </p>
+                <p>Client credentials provided as part of your Partner Application.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p><code>oauth_authorize</code> </p>
+                </td>
+                <td>
+                    <p><format color="Gray">string</format> </p>
+                    <p>Client credentials provided as part of your Partner Application.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p><code>name</code> </p>
+                </td>
+                <td>
+                    <p><format color="Gray">string</format> </p>
+                    <p>Name of Account displayed in the Dashboard.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p><code>user</code></p>
+                    <p><format color="Crimson">required</format> </p>
+                </td>
+                <td>
+                    <p><format color="Gray">object</format> </p>
+                    <p>Name of Account displayed in the Dashboard.</p>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <deflist collapsible="true">
+                        <def title="full_name">
+                            <table style="none">
+                                <tr>
+                                    <td>
+                                        <p><format color="Crimson">required</format> </p>
+                                    </td>
+                                    <td>
+                                        <p><format color="Gray">string</format> </p>
+                                        <p>Full name of the initial Admin user for the Account.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </def>
+                        <def title="email">
+                            <table style="none">
+                                <tr>
+                                    <td>
+                                        <p><format color="Crimson">required</format> </p>
+                                    </td>
+                                    <td>
+                                        <p><format color="Gray">string</format> </p>
+                                        <p>Email of the initial Admin user for the Account.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </def>
+                    </deflist>
+
+                </td>
+            </tr>
+        </table>
+    </chapter>
+    <chapter title="Get a list of geo-limitations for services">
+        <p><format style="bold" color="CornflowerBlue">POST</format><code>/v1/products/geo-restrictions-catalog-by-filter</code></p>
+    <table style="none">
+        <tr>
+            <td rowspan="2">
+                <p><code>filter</code> </p>
+                <p><format color="Crimson">required</format></p>
+            </td>
+            <td colspan="2">
+                <p><format color="Gray">
+                    object</format> </p>
+                <p>Filter. To see all geo-limits, leave names blank and pass true to only_visible.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+            <deflist collapsible="true">
+                <def title="names">
+                    <table style="none">
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                                <p><format color="Gray">array of strings</format> </p>
+                                <p>List of cities.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </def>
+                <def title="only_visible">
+                    <table style="none">
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                                <p><format color="Gray">string</format> </p>
+                                <p>Visibility of the value. It is recommended to always pass true in this parameter.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </def>
+            </deflist>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <p><code>last_order_number</code> </p>
+            </td>
+            <td>
+                <p><format color="Gray">
+                    int64</format> </p>
+                <p>The order of the geo-restriction from which we output data in the response.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <p><code>limit</code></p>
+            </td>
+            <td>
+                <p><format color="Gray">
+                    int64</format> </p>
+                <p>
+                    The number of results in response.
+                </p>
+            </td>
+        </tr>
+    </table>
+    </chapter>
+    <chapter>
+        <title>Update stocks
+        </title>
+        <p><format style="bold" color="CornflowerBlue">POST</format><code>/v1/product/import/stocks</code></p>
+        <table style="none">
+            <tr>
+                <td rowspan="2">
+                    <p><code>stocks</code> </p>
+                    <p><format color="Crimson">required</format></p>
+                </td>
+                <td colspan="2">
+                    <p><format color="Gray">
+                        array of objects</format> </p>
+                    <p>Stocks on warehouses.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <deflist collapsible="true">
+                        <def title="offer_id">
+                            <table style="none">
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <p><format color="Gray">string</format> </p>
+                                        <p>SKU</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </def>
+                        <def title="product_id">
+                            <table style="none">
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <p><format color="Gray">int64</format> </p>
+                                        <p>Product id in seller's system.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </def>
+                        <def title="stock">
+                            <table style="none">
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <p><format color="Gray">int64</format> </p>
+                                        <p>A number of items available.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </def>
+                    </deflist>
+                </td>
+            </tr>
+        </table>
+    </chapter>
+</topic>
