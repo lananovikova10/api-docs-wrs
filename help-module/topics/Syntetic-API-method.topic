@@ -23,8 +23,8 @@
                     <p><code>oauth_authorize</code> </p>
                 </td>
                 <td>
-                    <p><format color="Gray">string</format> </p>
-                    <p>Client credentials provided as part of your Partner Application.</p>
+                    <p><format color="Gray">boolean</format> </p>
+                    <p>Allows skipping of the /oauth/authorize call.</p>
                 </td>
             </tr>
             <tr>
@@ -174,46 +174,28 @@
                 <td>
                 </td>
                 <td>
-                    <deflist collapsible="true">
-                        <def title="offer_id">
-                            <table style="none">
-                                <tr>
-                                    <td>
-                                    </td>
-                                    <td>
-                                        <p><format color="Gray">string</format> </p>
-                                        <p>SKU</p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </def>
-                        <def title="product_id">
-                            <table style="none">
-                                <tr>
-                                    <td>
-                                    </td>
-                                    <td>
-                                        <p><format color="Gray">int64</format> </p>
-                                        <p>Product id in seller's system.
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </def>
-                        <def title="stock">
-                            <table style="none">
-                                <tr>
-                                    <td>
-                                    </td>
-                                    <td>
-                                        <p><format color="Gray">int64</format> </p>
-                                        <p>A number of items available.
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </def>
-                    </deflist>
+                    <chapter collapsible="true">
+                        <table style="none">
+                            <tr>
+                                <td>offer_id</td>
+                                <td><p><format color="Gray">
+                                    string</format> </p>
+                                    <p>SKU.</p></td>
+                            </tr>
+                            <tr>
+                                <td>product_id</td>
+                                <td><p><format color="Gray">
+                                    string</format> </p>
+                                    <p>Product ID in the seller system.</p></td>
+                            </tr>
+                            <tr>
+                                <td>stock</td>
+                                <td><p><format color="Gray">
+                                    int64</format> </p>
+                                    <p>Number of items available.</p></td>
+                            </tr>
+                        </table>
+                    </chapter>
                 </td>
             </tr>
         </table>
