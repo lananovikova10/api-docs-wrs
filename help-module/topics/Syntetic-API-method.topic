@@ -7,6 +7,7 @@
        title="Syntetic API method">
     <chapter title="Create a new Account">
         <p><format style="bold" color="CornflowerBlue">POST</format><code>/v1/accounts</code></p>
+        <p>Some summary.</p>
         <table style="none">
             <tr>
                 <td>
@@ -20,7 +21,7 @@
             </tr>
             <tr>
                 <td>
-                    <p><code>oauth_authorize</code> </p>
+                    <p><code>oauth_authorize</code></p>
                 </td>
                 <td>
                     <p><format color="Gray">boolean</format> </p>
@@ -84,6 +85,7 @@
     </chapter>
     <chapter title="Get a list of geo-limitations for services">
         <p><format style="bold" color="CornflowerBlue">POST</format><code>/v1/products/geo-restrictions-catalog-by-filter</code></p>
+        <p>Some summary.</p>
     <table style="none">
         <tr>
             <td rowspan="2">

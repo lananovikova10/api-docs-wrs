@@ -5,4 +5,8 @@
         <description>Created after removal of "Syntetic Ecom API" from api</description>
         <accepts>Ozon-API.html</accepts>
     </rule>
+    <rule id="53145631">
+        <description>Created after removal of "Gradle IntelliJ Plugin" from api</description>
+        <accepts>SDK.html</accepts>
+    </rule>
 </rules>

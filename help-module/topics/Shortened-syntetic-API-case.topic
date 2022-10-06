@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://helpserver.labs.jb.gg/help/schemas/mvp/html-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://helpserver.labs.jb.gg/help/schemas/mvp/topic.v2.xsd"
+       id="Shortened-syntetic-API-case"
+       title="Shortened syntetic API case">
+    <chapter title="Update stocks">
+        <p><format style="bold" color="CornflowerBlue">POST</format><code>/api/v1/product/update-sku-stock</code></p>
+        <p>Some method summary.</p>
+            <table style="none">
+            <tr>
+                <td>
+                    <p><code>product_id</code> </p>
+                    <p><format color="Crimson">required</format> </p>
+                </td>
+                <td>
+                    <p><format color="Gray">string</format> </p>
+                    <p>A unique product identifier in the client's system.</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="3"><code>skus</code>
+                    <p><format color="Crimson">required</format> </p>
+                </td>
+                <td>
+                    <p>Product entities params.</p>
+                </td>
+            </tr>
+            <tr>
+                <td><p><code>sku_code</code></p></td>
+                <td><p>Product identifier on the warehouse: SKU or barcode.</p>
+                    <p><format color="Gray">string</format> </p></td>
+            </tr>
+            <tr>
+                <td><p><code>inventory</code></p></td>
+                <td><p>Number of items.</p>
+                    <p><format color="Gray">int</format> </p>
+                </td>
+            </tr>
+        </table>
+    </chapter>
+</topic>

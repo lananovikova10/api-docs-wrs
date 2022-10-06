@@ -1,0 +1,3476 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "open-async-product-api api",
+    "description": "open-async-product-api",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://openapi.aliexpress.ru",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/api/v1/categories/top": {
+      "post": {
+        "operationId": "OpenAsyncProductApiService_GetCategoriesTop",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiGetCategoriesTopResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {}
+            }
+          }
+        ],
+        "tags": [
+          "OpenAsyncProductApiService"
+        ],
+        "security": [
+          {
+            "X-Aer-Seller-Info": []
+          }
+        ]
+      }
+    },
+    "/api/v1/categories/values-dictionary": {
+      "post": {
+        "operationId": "OpenAsyncProductApiService_GetDictionaryByProperty",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiGetDictionaryByPropertyResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/open_async_product_apiGetDictionaryByPropertyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OpenAsyncProductApiService"
+        ],
+        "security": [
+          {
+            "X-Aer-Seller-Info": []
+          }
+        ]
+      }
+    },
+    "/api/v1/product/create": {
+      "post": {
+        "summary": "Метод создания продуктов",
+        "operationId": "OpenAsyncProductApiService_ProductCreate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiProductCreateOrEditResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/open_async_product_apiProductCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "OpenAsyncProductApiService"
+        ],
+        "security": [
+          {
+            "X-Auth-Token": []
+          }
+        ],
+        "externalDocs": {
+          "description": "Документация по API для продавцов",
+          "url": "https://business.aliexpress.ru/docs/manage-products"
+        }
+      }
+    },
+    "/api/v1/product/edit": {
+      "post": {
+        "summary": "Полное редактирование продукта",
+        "operationId": "OpenAsyncProductApiService_ProductEdit",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiProductCreateOrEditResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/open_async_product_apiProductEditRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OpenAsyncProductApiService"
+        ],
+        "security": [
+          {
+            "X-Auth-Token": []
+          }
+        ],
+        "externalDocs": {
+          "description": "Документация по API для продавцов",
+          "url": "https://business.aliexpress.ru/docs/manage-products"
+        }
+      }
+    },
+    "/api/v1/product/get-products": {
+      "post": {
+        "tags": [
+          "OpenAsyncProductApiService"
+        ],
+        "summary": "Метод получения продуктов",
+        "operationId": "OpenAsyncProductApiService_GetProducts",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/open_async_product_apiGetProductsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiGetProductsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "X-Aer-Seller-Info": []
+          }
+        ],
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/api/v1/product/offline": {
+      "post": {
+        "summary": "Метод перевода продуктов в offline",
+        "operationId": "OpenAsyncProductApiService_OfflineProducts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiOnOffProductsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/open_async_product_apiOnOffProductsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "OpenAsyncProductApiService"
+        ],
+        "security": [
+          {
+            "X-Auth-Token": []
+          }
+        ]
+      }
+    },
+    "/api/v1/product/online": {
+      "post": {
+        "summary": "Метод перевода продуктов в online",
+        "operationId": "OpenAsyncProductApiService_OnlineProducts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiOnOffProductsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/open_async_product_apiOnOffProductsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "OpenAsyncProductApiService"
+        ],
+        "security": [
+          {
+            "X-Auth-Token": []
+          }
+        ]
+      }
+    },
+    "/api/v1/product/update-field": {
+      "post": {
+        "summary": "Метод обновления поля продукта",
+        "operationId": "OpenAsyncProductApiService_ProductUpdateField",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiProductUpdateFieldResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/open_async_product_apiProductUpdateFieldRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "OpenAsyncProductApiService"
+        ],
+        "security": [
+          {
+            "X-Auth-Token": []
+          }
+        ]
+      }
+    },
+    "/api/v1/product/update-sku-price": {
+      "post": {
+        "summary": "Метод обновления цены продукта по ску коду",
+        "operationId": "OpenAsyncProductApiService_UpdateSkuPrice",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiUpdateSkuPriceResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/open_async_product_apiUpdateSkuPriceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OpenAsyncProductApiService"
+        ],
+        "security": [
+          {
+            "X-Auth-Token": []
+          }
+        ]
+      }
+    },
+    "/api/v1/product/update-sku-stock": {
+      "post": {
+        "summary": "Метод обновления стока продукта по ску коду",
+        "operationId": "OpenAsyncProductApiService_UpdateSkuStock",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiUpdateSkuStockResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/open_async_product_apiUpdateSkuStockRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OpenAsyncProductApiService"
+        ],
+        "security": [
+          {
+            "X-Auth-Token": []
+          }
+        ]
+      }
+    },
+    "/api/v1/tasks": {
+      "get": {
+        "summary": "Метод получения списка задач на создание/обновление товаров",
+        "operationId": "OpenAsyncProductApiService_GetTasks",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiGetTasksResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "group_id",
+            "in": "query",
+            "required": true,
+            "description": "Идентификатор группы задач полученный при создании/обновлении товаров",
+            "schema": {
+              "type": "string",
+              "format": "uint64"
+            }
+          }
+        ],
+        "tags": [
+          "OpenAsyncProductApiService"
+        ],
+        "security": [
+          {
+            "X-Auth-Token": []
+          }
+        ]
+      }
+    },
+    "/api/v1/scroll-product-by-filter": {
+      "post": {
+        "operationId": "OpenAsyncProductApiService_ScrollProductByFilter",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiScrollProductByFilterResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/open_async_product_apiScrollProductByFilterRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OpenAsyncProductApiService"
+        ],
+        "security": [
+          {
+            "X-Auth-Token": []
+          }
+        ]
+      }
+    },
+    "/api/v1/scroll-short-product-by-filter": {
+      "post": {
+        "operationId": "OpenAsyncProductApiService_ScrollShortProductByFilter",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiScrollShortProductByFilterResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/open_async_product_apiErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/open_async_product_apiScrollProductByFilterRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OpenAsyncProductApiService"
+        ],
+        "security": [
+          {
+            "X-Aer-Seller-Info": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "X-Auth-Token": {
+        "type": "apiKey",
+        "description": "X-Auth-Token",
+        "name": "X-Auth-Token",
+        "in": "header"
+      }
+    },
+    "schemas": {
+      "open_async_product_apiAttributeDto": {
+        "type": "object",
+        "properties": {
+          "attribute_name_id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Название атрибута"
+          },
+          "attribute_value_id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Идентификатор значения атрибута"
+          },
+          "attribute_name": {
+            "type": "string",
+            "description": "Название атрибута"
+          },
+          "attribute_value": {
+            "type": "string",
+            "description": "Знчение атрибута"
+          }
+        }
+      },
+      "open_async_product_apiTaskResult": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "description": "Успех или нет превалидации товара",
+            "type": "boolean"
+          },
+          "task_id": {
+            "description": "Идентификатор задания на создание продукта",
+            "type": "string",
+            "format": "uint64"
+          },
+          "errors": {
+            "description": "Массив с описанием ошибок валидации",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "open_async_product_apiDetail": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "module_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiModuleList"
+            }
+          }
+        }
+      },
+      "open_async_product_apiErrorResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "properties": {}
+          },
+          "error": {
+            "$ref": "#/components/schemas/scopen_async_product_apiError"
+          }
+        },
+        "description": "complied with AER SOA convention error response."
+      },
+      "open_async_product_apiGetTasksResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiTask"
+            }
+          }
+        }
+      },
+      "open_async_product_apiHTMLContent": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        }
+      },
+      "open_async_product_apiItem": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Название продукта"
+          },
+          "id": {
+            "type": "string",
+            "description": "Идентификатор продукта"
+          },
+          "image": {
+            "type": "string",
+            "description": "Картинка"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "Дата создания"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "Дата обновления"
+          },
+          "status": {
+            "type": "string",
+            "description": "Статус продукта",
+            "enum": [
+              "online",
+              "offline"
+            ]
+          },
+          "link": {
+            "type": "string"
+          },
+          "group": {
+            "type": "array",
+            "description": "Группы продукта",
+            "items": {
+              "type": "string"
+            }
+          },
+          "price_range": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          "old_price_range": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          "stock": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shipping_template": {
+            "description": "Шаблон доставки",
+            "type": "string"
+          },
+          "decline_reason": {
+            "type": "string",
+            "description": "Причина блокировки"
+          },
+          "offline_at": {
+            "type": "string",
+            "description": "Дата снятия с публикации"
+          },
+          "offline_reason": {
+            "type": "string",
+            "description": "Причина снятия с продажи"
+          }
+        }
+      },
+      "open_async_product_apiModuleList": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "html": {
+            "$ref": "#/components/schemas/open_async_product_apiHTMLContent"
+          }
+        }
+      },
+      "open_async_product_apiProduct": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string",
+            "description": "Основной язык товара"
+          },
+          "product_unit": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Единица измерения товара. Наиболее часто используются штуки (100000015), упаковки (100000014) и комплект (100000017)"
+          },
+          "multi_language_description_list": {
+            "description": "Список названий товара на нескольких языках",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiSingleLanguageDescriptionDto"
+            }
+          },
+          "multi_language_subject_list": {
+            "description": "Список описаний товара на нескольких языках",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiSingleLanguageTitleDto"
+            }
+          },
+          "aliexpress_category_id": {
+            "description": "Идентификатор категории нижнего уровня",
+            "type": "string",
+            "format": "uint64"
+          },
+          "brand_name": {
+            "description": "Название бренда. Этот параметр нужно передать или отдельно, или внутри объекта attribute_list, aliexpress_attribute_name_id = 2. Если бренда нет, передайте None. Можно передавать только бренды, которые вы добавили в свой магазин",
+            "type": "string"
+          },
+          "main_image_urls_list": {
+            "description": "Массив ссылок на основные изображения товара. Все ссылки должны быть прямыми, то есть вести на изображение на вашем сервере или на CDN AliExpress",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sku_info_list": {
+            "description": "Содержит три обязательных параметра: * inventory (остаток товара на складе от 1 до 999999), * price (цена товара от 0,01 до 999999), * sku_code (идентификатор экземпляра: артикул или штрихкод) И ряд необязательных: discount_price, bar_code (штрихкод, обязательно для продавцов, работающих по модели Фулфилмент «Цайняо»), sku_attributes_list (список полей sku_attribute_name, sku_attribute_value и sku_image_url)",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiSkuInfoDto"
+            }
+          },
+          "attribute_list": {
+            "description": "Список ключей и значений атрибутов товара. * attribute_name, string (название нового атрибута) * attribute_value, string (новое значение атрибута) * attribute_name_id, int (существующее в системе название атрибута) * attribute_value_id, int (существующее в системе значение атрибута)",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiAttributeDto"
+            }
+          },
+          "inventory_deduction_strategy": {
+            "description": "В какой момент будет вычитаться остаток товара: в момент оплаты (payment_success_deduct) или в момент совершения заказа place_order_withhold)",
+            "type": "string"
+          },
+          "weight": {
+            "description": "Вес товара в упаковке (используется для расчёта доставки). Может принимать значение от 0,001 до 500 килограммов",
+            "type": "string"
+          },
+          "package_length": {
+            "description": "Длина упаковки в сантиметрах. Может принимать значение от 1 до 700 сантиметров",
+            "type": "integer",
+            "format": "int64",
+            "minimum": 1,
+            "maximum": 700
+          },
+          "package_height": {
+            "description": "Высота упаковки в сантиметрах. Может принимать значение от 1 до 700 сантиметров",
+            "type": "integer",
+            "format": "int64",
+            "minimum": 1,
+            "maximum": 700
+          },
+          "package_width": {
+            "description": "Ширина упаковки в сантиметрах. Может принимать значение от 1 до 700 сантиметров",
+            "type": "integer",
+            "format": "int64",
+            "minimum": 1,
+            "maximum": 700
+          },
+          "freight_template_id": {
+            "description": "Идентификатор шаблона доставки, уникален для каждого продавца или шаблона",
+            "type": "string",
+            "format": "uint64"
+          },
+          "size_chart_id": {
+            "description": "Идентификатор таблицы размеров. Нужен для одежды, обуви, аксессуаров и белья",
+            "type": "string",
+            "format": "uint64"
+          },
+          "shipping_lead_time": {
+            "description": "Время на отправку заказа (время, за которое вы обязуетесь ввести трек-номер)",
+            "type": "string",
+            "format": "uint64"
+          },
+          "service_policy_id": {
+            "description": "Идентификатор шаблон услуг, описывающего условия возврата. id = 0 соответствует шаблону по умолчанию: Service Template for New Sellers",
+            "type": "string",
+            "format": "uint64"
+          },
+          "ae_group_ids": {
+            "description": "Идентификатор группы товаров",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uint64"
+            }
+          },
+          "package_type": {
+            "description": "Метод продаж. false - поштучно, true - лотами",
+            "type": "boolean"
+          },
+          "lot_num": {
+            "description": "Количество твоара в лоте",
+            "type": "string",
+            "format": "uint64"
+          },
+          "gtin": {
+            "type": "string"
+          },
+          "tnved_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "okpd2_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "product_id": {
+            "type": "string",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "language",
+          "multi_language_description_list",
+          "multi_language_subject_list",
+          "aliexpress_category_id",
+          "brand_name",
+          "main_image_urls_list",
+          "sku_info_list",
+          "attribute_list",
+          "inventory_deduction_strategy",
+          "weight",
+          "package_length",
+          "package_height",
+          "package_width",
+          "freight_template_id",
+          "shipping_lead_time",
+          "service_policy_id"
+        ]
+      },
+      "open_async_product_apiProductCreateRequest": {
+        "$ref": "#/components/schemas/open_async_product_apiProductCreateRequestDoc"
+      },
+      "open_async_product_apiProductEditRequest": {
+        "$ref": "#/components/schemas/open_async_product_apiProductCreateRequestDoc"
+      },
+      "open_async_product_apiProductCreateRequestDoc": {
+        "type": "object",
+        "properties": {
+          "products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiProduct"
+            }
+          }
+        }
+      },
+      "open_async_product_apiProductCreateOrEditResponse": {
+        "type": "object",
+        "properties": {
+          "group_id": {
+            "description": "Идентификатор запроса. По нему можно будет посмотреть статусы загрузки и обновления товаров",
+            "type": "string",
+            "format": "uint64"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiTaskResult"
+            }
+          }
+        }
+      },
+      "open_async_product_apiMyBrandDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "bizId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "open_async_product_apiOnOffProductsRequest": {
+        "type": "object",
+        "properties": {
+          "productIds": {
+            "type": "array",
+            "description": "Список идентификаторов продуктов",
+            "items": {
+              "type": "string",
+              "format": "uint64"
+            }
+          }
+        }
+      },
+      "open_async_product_apiPaginationResponseDTO": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "string",
+            "format": "int64"
+          },
+          "fullTotal": {
+            "type": "string",
+            "format": "int64"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiMyBrandDTO"
+            }
+          },
+          "offset": {
+            "type": "string",
+            "format": "int64"
+          },
+          "limit": {
+            "type": "string",
+            "format": "int64"
+          },
+          "filters": {
+            "$ref": "#/components/schemas/open_async_product_apiGetMyBrandListFilters"
+          },
+          "sort": {
+            "$ref": "#/components/schemas/open_async_product_apiGetMyBrandListSort"
+          }
+        }
+      },
+      "open_async_product_apiOnOffProductsResponse": {
+        "type": "object",
+        "properties": {
+          "group_id": {
+            "type": "string",
+            "format": "uint64"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiTaskResult"
+            }
+          }
+        }
+      },
+      "open_async_product_apiProductUpdateFieldRequest": {
+        "type": "object",
+        "properties": {
+          "fields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiUpdateField"
+            }
+          }
+        }
+      },
+      "open_async_product_apiProductUpdateFieldResponse": {
+        "type": "object",
+        "properties": {
+          "group_id": {
+            "description": "Идентификатор группы задач полученный при создании/обновлении товаров",
+            "type": "string",
+            "format": "uint64"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiUpdateOneFieldTaskResult"
+            }
+          }
+        }
+      },
+      "open_async_product_apiSingleLanguageDescriptionDto": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string",
+            "description": "Язык описания"
+          },
+          "web_detail": {
+            "$ref": "#/components/schemas/open_async_product_apiDetail"
+          },
+          "mobile_detail": {
+            "$ref": "#/components/schemas/open_async_product_apiDetail"
+          }
+        }
+      },
+      "open_async_product_apiSingleLanguageTitleDto": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          }
+        }
+      },
+      "open_async_product_apiSkuAttributesDto": {
+        "type": "object",
+        "properties": {
+          "sku_attribute_name": {
+            "description": "Название нового атрибута",
+            "type": "string"
+          },
+          "sku_attribute_value": {
+            "description": "Новое значение атрибута",
+            "type": "string"
+          },
+          "sku_image_url": {
+            "description": "Картинка",
+            "type": "string"
+          },
+          "sku_attribute_name_id": {
+            "description": "существующее в системе название атрибута",
+            "type": "string",
+            "format": "uint64"
+          },
+          "sku_attribute_value_id": {
+            "description": "Существующее в системе значение атрибута",
+            "type": "string",
+            "format": "uint64"
+          },
+          "sku_attribute_value_definition_name": {
+            "description": "Кастомное название значения атрибута",
+            "type": "string"
+          }
+        }
+      },
+      "open_async_product_apiSkuInfoDto": {
+        "type": "object",
+        "properties": {
+          "inventory": {
+            "description": "Остаток товара на складе от 1 до 999999",
+            "type": "string",
+            "format": "uint64",
+            "minimum": 1,
+            "maximum": 999999
+          },
+          "price": {
+            "description": "Цена товара от 0,01 до 999999",
+            "type": "string",
+            "format": "float"
+          },
+          "discount_price": {
+            "description": "Цена товара со скидкой",
+            "type": "string",
+            "format": "float"
+          },
+          "sku_code": {
+            "description": "Идентификатор экземпляра: артикул или штрихкод",
+            "type": "string"
+          },
+          "bar_code": {
+            "description": "Штрихкод: обязательно для продавцов, работающих по модели Фулфилмент «Цайняо»",
+            "type": "string"
+          },
+          "sku_attributes_list": {
+            "description": "Список sku атрибутов",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiSkuAttributesDto"
+            }
+          },
+          "gtin": {
+            "type": "string"
+          },
+          "tnved_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "okpd2_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "inventory",
+          "price",
+          "sku_code"
+        ]
+      },
+      "open_async_product_apiSkuPrice": {
+        "type": "object",
+        "properties": {
+          "sku_code": {
+            "description": "Идентификатор экземпляра: артикул или штрихкод",
+            "type": "string"
+          },
+          "price": {
+            "description": "Цена товара от 0,01 до 999999",
+            "type": "string"
+          },
+          "discount_price": {
+            "description": "Цена товара со скидкой",
+            "type": "string"
+          }
+        }
+      },
+      "open_async_product_apiSkuStock": {
+        "type": "object",
+        "properties": {
+          "sku_code": {
+            "type": "string",
+            "description": "Идентификатор экземпляра: артикул или штрихкод"
+          },
+          "inventory": {
+            "description": "Остаток товара на складе от 1 до 999999",
+            "type": "string",
+            "format": "uint64"
+          }
+        }
+      },
+      "open_async_product_apiTask": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uint64",
+            "description": "Идентификатор задания на создание/обновление продукта"
+          },
+          "group_id": {
+            "type": "string",
+            "format": "uint64",
+            "description": "Идентификатор группы заданий на создание/обновление продукта"
+          },
+          "action": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Тип задачния (1 - создание; 2 - обноление)"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Статус задания на создание/обновление продукта (1 - создано; 2 - обрабатывается; 3 - успех; 4 - ошибка)"
+          },
+          "product_id": {
+            "type": "string",
+            "format": "uint64",
+            "description": "Идентификатор продукта"
+          },
+          "sku_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "sku кода продукта (в случае задания на создание продукта)"
+          },
+          "error": {
+            "$ref": "#/components/schemas/open_async_product_apiTaskError"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Время создания задания на создание/обновление продукта"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Время последкнего обновления задания на создание/обновление продукта"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Некритичные ошибки, возникшие в процессе выполнения задач"
+          },
+          "batch_results": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/open_async_product_apiBatchItemResult"
+            },
+            "description": "Результат пакетных операций"
+          }
+        }
+      },
+      "open_async_product_apiBatchItemResult": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "open_async_product_apiTaskError": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "format": "int64",
+            "description": "Код ошибки"
+          },
+          "message": {
+            "type": "string",
+            "description": "Описание ошибки"
+          }
+        }
+      },
+      "open_async_product_apiUpdateField": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string",
+            "format": "uint64"
+          },
+          "key": {
+            "description": "изменяемое поле",
+            "type": "string",
+            "enum": [
+              "delivery_time",
+              "freight_template_id",
+              "image_urls",
+              "subject"
+            ]
+          },
+          "value": {
+            "description": "значение зависит от поля: int для delivery_time, freight_template_id; string для subject; array для image_urls",
+            "oneOf": [
+              {
+                "type": "integer",
+                "minimum": 1
+              },
+              {
+                "type": "array",
+                "maxItems": 6,
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "product_id",
+          "key",
+          "value"
+        ]
+      },
+      "open_async_product_apiUpdateOneFieldTaskResult": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          },
+          "task_id": {
+            "type": "string",
+            "format": "uint64",
+            "description": "Идентификатор задания на обновление продукта"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "open_async_product_apiUpdateSkuPriceRequest": {
+        "type": "object",
+        "properties": {
+          "products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiUpdateSkuPriceRequestProduct"
+            }
+          }
+        }
+      },
+      "open_async_product_apiUpdateSkuPriceRequestProduct": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "description": "Идентификатор продукта",
+            "type": "string",
+            "format": "uint64"
+          },
+          "skus": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiSkuPrice"
+            }
+          }
+        }
+      },
+      "open_async_product_apiUpdateSkuPriceResponse": {
+        "type": "object",
+        "properties": {
+          "group_id": {
+            "description": "Идентификатор группы задач полученный при создании/обновлении товаров",
+            "type": "string",
+            "format": "uint64"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiTaskResult"
+            }
+          }
+        }
+      },
+      "open_async_product_apiUpdateSkuStockRequest": {
+        "type": "object",
+        "properties": {
+          "products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiUpdateSkuStockRequestProduct"
+            }
+          }
+        }
+      },
+      "open_async_product_apiUpdateSkuStockRequestProduct": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "description": "Идентификатор продукта",
+            "type": "string",
+            "format": "uint64"
+          },
+          "skus": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiSkuStock"
+            }
+          }
+        }
+      },
+      "open_async_product_apiUpdateSkuStockResponse": {
+        "type": "object",
+        "properties": {
+          "group_id": {
+            "description": "Идентификатор группы задач полученный при создании/обновлении товаров",
+            "type": "string",
+            "format": "uint64"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiTaskResult"
+            }
+          }
+        }
+      },
+      "open_async_product_apiGetProductsRequest": {
+        "type": "object",
+        "properties": {
+          "ids": {
+            "description": "Список идентификаторов продуктов",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "int64"
+            }
+          }
+        }
+      },
+      "open_async_product_apiGetProductsResponse": {
+        "type": "object",
+        "properties": {
+          "products": {
+            "description": "Список продуктов",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiGetProduct"
+            }
+          },
+          "lost_ids": {
+            "description": "Список идентификаторов которые не удалось найти",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "int64"
+            }
+          }
+        }
+      },
+      "open_async_product_apiGetBrandListRequest": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "string",
+            "format": "int64"
+          },
+          "limit": {
+            "type": "string",
+            "format": "int64"
+          },
+          "filters": {
+            "$ref": "#/components/schemas/open_async_product_apiGetMyBrandListFilters"
+          },
+          "sort": {
+            "$ref": "#/components/schemas/open_async_product_apiGetMyBrandListSort"
+          }
+        }
+      },
+      "open_async_product_apiGetBrandListResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/open_async_product_apiPaginationResponseDTO"
+          }
+        }
+      },
+      "open_async_product_apiGetMyBrandListFilters": {
+        "type": "object",
+        "properties": {
+          "dateFrom": {
+            "type": "string"
+          },
+          "dateTo": {
+            "type": "string"
+          },
+          "status": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "open_async_product_apiGetMyBrandListSort": {
+        "type": "object",
+        "properties": {
+          "by": {
+            "type": "string"
+          },
+          "dir": {
+            "type": "string"
+          }
+        }
+      },
+      "open_async_product_apiGetProduct": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "int64"
+          },
+          "ali_created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ali_updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "owner_member_id": {
+            "type": "string",
+            "description": "логин, создавшего продукт"
+          },
+          "owner_member_seq": {
+            "type": "string",
+            "format": "int64",
+            "description": "ID, создавшего продукт"
+          },
+          "bulk_discount": {
+            "type": "string",
+            "format": "int64"
+          },
+          "bulk_order": {
+            "type": "string",
+            "format": "int64"
+          },
+          "base_unit": {
+            "type": "string",
+            "format": "int64"
+          },
+          "add_unit": {
+            "type": "string",
+            "format": "int64",
+            "description": "Индивидуальная настройка веса посылки"
+          },
+          "add_weight": {
+            "type": "number",
+            "format": "float",
+            "description": "Индивидуальная настройка веса посылки"
+          },
+          "category_id": {
+            "type": "string",
+            "format": "int64"
+          },
+          "currency_code": {
+            "type": "string"
+          },
+          "delivery_time": {
+            "type": "string",
+            "format": "int64"
+          },
+          "freight_template_id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Идентификатор шаблона доставки, уникален для каждого продавца или шаблона"
+          },
+          "package_height": {
+            "type": "string",
+            "format": "int64"
+          },
+          "package_length": {
+            "type": "string",
+            "format": "int64"
+          },
+          "package_width": {
+            "type": "string",
+            "format": "int64"
+          },
+          "lot_num": {
+            "type": "string",
+            "format": "int64",
+            "description": "Значение количества в упаковке"
+          },
+          "price": {
+            "type": "string",
+            "description": "Цена"
+          },
+          "property": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetProductProperty"
+            }
+          },
+          "status_type": {
+            "type": "string",
+            "description": "Статус товара"
+          },
+          "unit": {
+            "type": "string",
+            "format": "int64"
+          },
+          "promise_template_id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Шаблон возвратова (по умолчанию 0 - это системный шаблон возвратов)"
+          },
+          "product_reduce_strategy": {
+            "type": "string",
+            "description": "Вычет запасов"
+          },
+          "gross_weight": {
+            "type": "number",
+            "format": "float",
+            "description": "Вес в упаковке"
+          },
+          "sizechart_id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Таблица размеров"
+          },
+          "package_type": {
+            "type": "boolean",
+            "description": "Значение метода продаж (true - Лотами, false - Поштучно)"
+          },
+          "descriptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetProductDescription"
+            }
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetProductGroup"
+            },
+            "description": "ID групп продуктов"
+          },
+          "media": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetProductMedia"
+            }
+          },
+          "sku": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetProductSKU"
+            }
+          },
+          "subject": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetProductSubject"
+            }
+          }
+        }
+      },
+      "GetProductDescription": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "locale": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "mobile_detail": {
+            "type": "string"
+          },
+          "web_detail": {
+            "type": "string"
+          }
+        }
+      },
+      "GetProductGroup": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "ali_id": {
+            "type": "string",
+            "format": "int64"
+          }
+        }
+      },
+      "GetProductMedia": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "ali_member_id": {
+            "type": "string",
+            "format": "int64"
+          },
+          "media_id": {
+            "type": "string",
+            "format": "int64"
+          },
+          "media_status": {
+            "type": "string"
+          },
+          "media_type": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "GetProductProperty": {
+        "type": "object",
+        "properties": {
+          "name_id": {
+            "type": "string",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "value_id": {
+            "type": "string",
+            "format": "int64"
+          },
+          "value": {
+            "type": "string"
+          },
+          "image_url": {
+            "type": "string"
+          },
+          "value_definition": {
+            "type": "string"
+          }
+        }
+      },
+      "GetProductSKU": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "ali_id": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "property": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetProductProperty"
+            }
+          },
+          "price": {
+            "type": "string"
+          },
+          "discount_price": {
+            "type": "string"
+          },
+          "barcode": {
+            "type": "string"
+          },
+          "currency_code": {
+            "type": "string"
+          },
+          "ipm_sku_stock": {
+            "type": "string",
+            "format": "int64",
+            "title": "Deprecated field"
+          },
+          "stock": {
+            "type": "boolean",
+            "title": "Deprecated field"
+          },
+          "sku_id": {
+            "type": "string",
+            "format": "int64"
+          }
+        }
+      },
+      "GetProductSubject": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "locale": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "scopen_async_product_apiError": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "format": "int64"
+          },
+          "message": {
+            "type": "string"
+          },
+          "details": {
+            "type": "object"
+          }
+        },
+        "description": "complied with AER SOA convention error."
+      },
+      "open_async_product_apiScrollProductByFilterRequest": {
+        "type": "object",
+        "properties": {
+          "filter": {
+            "$ref": "#/components/schemas/ScrollProductByFilterRequestFilter"
+          },
+          "last_product_id": {
+            "type": "string",
+            "format": "uint64",
+            "description": "ID последнего найденного товара. Из поиска исключаются товары с ID меньше или равным переданному значению."
+          },
+          "limit": {
+            "type": "string",
+            "format": "uint64",
+            "description": "Кол-во товаров в ответе"
+          }
+        }
+      },
+      "ScrollProductByFilterRequestFilter": {
+        "type": "object",
+        "properties": {
+          "top_category_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uint64"
+            },
+            "description": "Категория верхнего уровня"
+          },
+          "leaf_category_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uint64"
+            },
+            "description": "Категория, не имеющая подкатегорий"
+          },
+          "owner_id": {
+            "type": "string",
+            "format": "uint64",
+            "description": "ID владельца продукта"
+          },
+          "shipping_template_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uint64"
+            },
+            "description": "Список шаблонов доставки"
+          },
+          "status": {
+            "type": "string",
+            "description": "Статус товара"
+          },
+          "group_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uint64"
+            },
+            "description": "ID групп продуктов"
+          },
+          "has_quantity": {
+            "type": "boolean",
+            "description": "В наличии"
+          },
+          "search_content": {
+            "$ref": "#/components/schemas/ScrollProductByFilterRequestScrollProductFilterSearchContentDTO"
+          },
+          "time_range_condition": {
+            "$ref": "#/components/schemas/ScrollProductByFilterRequestScrollProductFilterTimeRangeConditionDTO"
+          },
+          "offline_reason": {
+            "type": "string"
+          }
+        }
+      },
+      "open_async_product_apiScrollProductByFilterResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/open_async_product_apiGetProductsByIDData"
+          },
+          "error": {
+            "$ref": "#/components/schemas/scopen_async_product_apiError"
+          }
+        }
+      },
+      "open_async_product_apiScrollShortProductByFilterResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiScrollShortProductByFilterResponseProduct"
+            }
+          },
+          "error": {
+            "$ref": "#/components/schemas/scopen_async_product_apiError"
+          }
+        }
+      },
+      "open_async_product_apiScrollShortProductByFilterResponseProduct": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Идентификатор продукта"
+          },
+          "ali_created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Дата создания"
+          },
+          "ali_updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Дата обновления"
+          },
+          "category_id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Индентификатор категории"
+          },
+          "currency_code": {
+            "type": "string",
+            "description": "Код валюты"
+          },
+          "delivery_time": {
+            "type": "string",
+            "format": "int64",
+            "description": "Время доставки"
+          },
+          "owner_member_id": {
+            "type": "string",
+            "description": "логин, создавшего продукт"
+          },
+          "owner_member_seq": {
+            "type": "string",
+            "format": "int64",
+            "description": "ID, создавшего продукт"
+          },
+          "freight_template_id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Идентификатор шаблона доставки, уникален для каждого продавца или шаблона"
+          },
+          "group_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "int64",
+              "description": "ID групп продуктов"
+            }
+          },
+          "main_image_url": {
+            "type": "string",
+            "description": "Картинка товара"
+          },
+          "main_image_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "Список картинок товара"
+            }
+          },
+          "sku": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiScrollShortProductByFilterResponseSKU"
+            }
+          },
+          "Subject": {
+            "type": "string"
+          },
+          "marketing_images": {
+            "type": "array",
+            "description": "Маркетинговые изображения",
+            "items": {
+              "$ref": "#/components/schemas/ScrollShortProductByFilterResponseMarketingImage"
+            }
+          }
+        }
+      },
+      "ScrollShortProductByFilterResponseMarketingImage": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "type": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "open_async_product_apiScrollShortProductByFilterResponseSKU": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "sku_id": {
+            "type": "string",
+            "format": "int64"
+          },
+          "code": {
+            "type": "string"
+          },
+          "price": {
+            "type": "string",
+            "description": "Цена"
+          },
+          "discount_price": {
+            "type": "string",
+            "description": "Цена со скидкой"
+          },
+          "ipm_sku_stock": {
+            "type": "string",
+            "format": "int64",
+            "description": "Кол-во товара"
+          }
+        }
+      },
+      "open_async_product_apiGetProductsByIDData": {
+        "type": "object",
+        "properties": {
+          "products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetProductsByIDDataResponseProduct"
+            },
+            "description": "Список продуктов"
+          },
+          "lost_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "int64"
+            },
+            "description": "Список идентификаторов, которые не удалось найти"
+          }
+        }
+      },
+      "GetProductsByIDDataResponseProduct": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Идентификатор продукта"
+          },
+          "ali_created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Время создания"
+          },
+          "ali_updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Время обновления"
+          },
+          "owner_member_id": {
+            "type": "string",
+            "description": "логин, создавшего продукт"
+          },
+          "owner_member_seq": {
+            "type": "string",
+            "format": "int64",
+            "description": "ID, создавшего продукт"
+          },
+          "bulk_discount": {
+            "type": "string",
+            "format": "int64"
+          },
+          "bulk_order": {
+            "type": "string",
+            "format": "int64"
+          },
+          "base_unit": {
+            "type": "string",
+            "format": "int64",
+            "description": "Базовая единица"
+          },
+          "add_unit": {
+            "type": "string",
+            "format": "int64"
+          },
+          "add_weight": {
+            "type": "number",
+            "format": "float"
+          },
+          "category_id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Индентификатор категории"
+          },
+          "currency_code": {
+            "type": "string",
+            "description": "Код валюты"
+          },
+          "delivery_time": {
+            "type": "string",
+            "format": "int64",
+            "description": "Время доставки"
+          },
+          "freight_template_id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Идентификатор шаблона доставки, уникален для каждого продавца или шаблона"
+          },
+          "package_height": {
+            "type": "string",
+            "format": "int64",
+            "description": "Высота упаковки"
+          },
+          "package_length": {
+            "type": "string",
+            "format": "int64",
+            "description": "Длина упаковки"
+          },
+          "package_width": {
+            "type": "string",
+            "format": "int64",
+            "description": "Ширина упаковки"
+          },
+          "lot_num": {
+            "type": "string",
+            "format": "int64"
+          },
+          "price": {
+            "type": "string",
+            "description": "Цена"
+          },
+          "property": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiGetProductsByIDDataProperty"
+            },
+            "description": "Свойства товара"
+          },
+          "status_type": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string",
+            "format": "int64",
+            "description": "Единица измерения"
+          },
+          "promise_template_id": {
+            "type": "string",
+            "format": "int64"
+          },
+          "product_reduce_strategy": {
+            "type": "string",
+            "description": "Вычет запасов"
+          },
+          "gross_weight": {
+            "type": "number",
+            "format": "float",
+            "description": "Вес в упаковке"
+          },
+          "sizechart_id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Таблица размеров"
+          },
+          "package_type": {
+            "type": "boolean",
+            "description": "Значение метода продаж (true - Лотами, false - Поштучно)"
+          },
+          "descriptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiGetProductsByIDDataDescription"
+            },
+            "description": "Описания товара"
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiGetProductsByIDDataGroup"
+            }
+          },
+          "media": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiGetProductsByIDDataMedia"
+            },
+            "description": "Картинки/Видео"
+          },
+          "sku": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiGetProductsByIDDataSKU"
+            },
+            "description": "Атрибуты"
+          },
+          "subject": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiGetProductsByIDDataSubject"
+            },
+            "description": "Основное название"
+          }
+        }
+      },
+      "open_async_product_apiGetProductsByIDDataDescription": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "locale": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "mobile_detail": {
+            "type": "string"
+          },
+          "web_detail": {
+            "type": "string"
+          }
+        }
+      },
+      "open_async_product_apiGetProductsByIDDataGroup": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "ali_id": {
+            "type": "string",
+            "format": "int64"
+          }
+        }
+      },
+      "open_async_product_apiGetProductsByIDDataMedia": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "ali_member_id": {
+            "type": "string",
+            "format": "int64"
+          },
+          "media_id": {
+            "type": "string",
+            "format": "int64"
+          },
+          "media_status": {
+            "type": "string"
+          },
+          "media_type": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "open_async_product_apiGetProductsByIDDataProperty": {
+        "type": "object",
+        "properties": {
+          "name_id": {
+            "type": "string",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "value_id": {
+            "type": "string",
+            "format": "int64"
+          },
+          "value": {
+            "type": "string"
+          },
+          "image_url": {
+            "type": "string"
+          },
+          "value_definition": {
+            "type": "string"
+          }
+        }
+      },
+      "open_async_product_apiGetProductsByIDDataSKU": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "ali_id": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "property": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiGetProductsByIDDataProperty"
+            }
+          },
+          "price": {
+            "type": "string"
+          },
+          "discount_price": {
+            "type": "string"
+          },
+          "barcode": {
+            "type": "string"
+          },
+          "currency_code": {
+            "type": "string"
+          },
+          "ipm_sku_stock": {
+            "type": "string",
+            "format": "int64"
+          },
+          "stock": {
+            "type": "boolean"
+          },
+          "sku_id": {
+            "type": "string",
+            "format": "int64"
+          }
+        }
+      },
+      "open_async_product_apiGetProductsByIDDataSubject": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "locale": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "ScrollProductByFilterRequestScrollProductFilterSearchContentDTO": {
+        "type": "object",
+        "properties": {
+          "content_values": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Значение, содержимого content_type"
+          },
+          "content_type": {
+            "type": "string",
+            "description": "поиск по ID товара (PRODUCT_ID)/Названию товара (PRODUCT_TITLE)/артикулу товара (SKU_SELLER_SKU)"
+          }
+        }
+      },
+      "ScrollProductByFilterRequestScrollProductFilterTimeRangeConditionDTO": {
+        "type": "object",
+        "properties": {
+          "begin_time": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Время начала"
+          },
+          "end_time": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Время окончания"
+          },
+          "time_type": {
+            "type": "string",
+            "enum": [
+              "PRODUCT_CREATE_TIME",
+              "PRODUCT_LAST_MODIFIED"
+            ],
+            "description": "Поиск по времени создания(PRODUCT_CREATE_TIME)/изменения(PRODUCT_LAST_MODIFIED)"
+          }
+        }
+      },
+      "open_async_product_apiGetCategoriesResponse": {
+        "type": "object",
+        "properties": {
+          "categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiCategory"
+            }
+          }
+        }
+      },
+      "open_async_product_apiCategory": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Индентификатор категории на AliExpress"
+          },
+          "parent_id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Идентификатор категории более высокого уровня"
+          },
+          "name": {
+            "type": "string",
+            "description": "Название категории"
+          },
+          "children_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "int64"
+            },
+            "description": "Идентификаторы дочерних категорий. Если массив пуст, это категория самого низкого уровня. В ней можно создать товар."
+          },
+          "is_visible": {
+            "type": "boolean",
+            "description": "Является ли категория активной на AliExpress."
+          },
+          "sku_properties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/scopen_async_product_apiProperty"
+            },
+            "description": "Атрибуты артикула (SKU)."
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/scopen_async_product_apiProperty"
+            },
+            "description": "Атрибуты категории."
+          }
+        }
+      },
+      "scopen_async_product_apiProperty": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Идентификатор атрибута."
+          },
+          "name": {
+            "type": "string",
+            "description": "Название атрибута."
+          },
+          "is_required": {
+            "type": "boolean",
+            "description": "Атрибут является обязательным."
+          },
+          "is_key": {
+            "type": "boolean",
+            "description": "Является ли ключевым атрибутом. Это значит, что его рекомендуется заполнить, так как он может влиять на выдачу в поиске и фильтры."
+          },
+          "is_brand": {
+            "type": "boolean",
+            "description": "Является ли атрибут брендом."
+          },
+          "is_enum_prop": {
+            "type": "boolean",
+            "description": "Является ли атрибут справочным."
+          },
+          "is_multi_select": {
+            "type": "boolean",
+            "description": "Можно ли выбрать несколько значений атрибута."
+          },
+          "is_input_prop": {
+            "type": "boolean",
+            "description": "Является ли значение атрибута произвольным."
+          },
+          "has_unit": {
+            "type": "boolean",
+            "description": "Есть единица измерения."
+          },
+          "has_customized_pic": {
+            "type": "boolean",
+            "description": "Есть произвольное изображение."
+          },
+          "has_customized_name": {
+            "type": "boolean",
+            "description": "Может ли название быть произвольным."
+          },
+          "units": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiUnit"
+            },
+            "description": "Массив единиц измерения атрибута (для числовых)."
+          }
+        }
+      },
+      "scopen_async_product_apiProduct": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string"
+          },
+          "product_unit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "multi_language_description_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiSingleLanguageDescriptionDto"
+            }
+          },
+          "multi_language_subject_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiSingleLanguageTitleDto"
+            }
+          },
+          "aliexpress_category_id": {
+            "type": "string",
+            "format": "uint64"
+          },
+          "brand_name": {
+            "type": "string"
+          },
+          "main_image_urls_list": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sku_info_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiSkuInfoDto"
+            }
+          },
+          "attribute_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiAttributeDto"
+            }
+          },
+          "inventory_deduction_strategy": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "string"
+          },
+          "package_length": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "package_height": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "package_width": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "freight_template_id": {
+            "type": "string",
+            "format": "uint64"
+          },
+          "size_chart_id": {
+            "type": "string",
+            "format": "uint64"
+          },
+          "shipping_lead_time": {
+            "type": "string",
+            "format": "uint64"
+          },
+          "service_policy_id": {
+            "type": "string",
+            "format": "uint64"
+          },
+          "ae_group_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uint64"
+            }
+          },
+          "package_type": {
+            "type": "boolean"
+          },
+          "lot_num": {
+            "type": "string",
+            "format": "uint64"
+          },
+          "gtin": {
+            "type": "string"
+          },
+          "tnved_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "okpd2_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "open_async_product_apiUnit": {
+        "type": "object",
+        "properties": {
+          "rate": {
+            "type": "number",
+            "format": "double",
+            "description": "Значение единицы измерения."
+          },
+          "name": {
+            "type": "string",
+            "description": "Название единицы измерения."
+          }
+        }
+      },
+      "open_async_product_apiGetCategoriesRequest": {
+        "type": "object",
+        "properties": {
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "int64"
+            },
+            "description": "Массив идентификаторов категорий."
+          }
+        }
+      },
+      "open_async_product_apiGetCategoriesTopResponse": {
+        "type": "object",
+        "properties": {
+          "categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetCategoriesTopResponseTopCategory"
+            }
+          }
+        }
+      },
+      "GetCategoriesTopResponseTopCategory": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Индентификатор категории на AliExpress"
+          },
+          "name": {
+            "type": "string",
+            "description": "Название категории"
+          },
+          "children_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "int64"
+            },
+            "description": "Идентификаторы дочерних категорий. Если массив пуст, это категория самого низкого уровня. В ней можно создать товар."
+          },
+          "is_visible": {
+            "type": "boolean",
+            "description": "Является ли категория активной на AliExpress."
+          },
+          "sku_properties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/scopen_async_product_apiProperty"
+            },
+            "description": "Атрибуты артикула (SKU)."
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/scopen_async_product_apiProperty"
+            },
+            "description": "Атрибуты категории."
+          }
+        }
+      },
+      "open_async_product_apiGetDictionaryByPropertyResponse": {
+        "type": "object",
+        "properties": {
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/open_async_product_apiGetDictionaryByPropertyResponseValue"
+            },
+            "description": "Массив атрибутов категории."
+          },
+          "error": {
+            "$ref": "#/components/schemas/scopen_async_product_apiError"
+          }
+        }
+      },
+      "open_async_product_apiGetDictionaryByPropertyResponseValue": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Идентификатор значения атрибута."
+          },
+          "name": {
+            "type": "string",
+            "description": "Название значения атрибута."
+          }
+        }
+      },
+      "open_async_product_apiGetDictionaryByPropertyRequest": {
+        "type": "object",
+        "properties": {
+          "category_id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Идентификатор категории на AliExpress."
+          },
+          "property_id": {
+            "type": "string",
+            "format": "int64",
+            "description": "Идентификатор атрибута."
+          },
+          "is_sku_property": {
+            "type": "boolean",
+            "description": "Является атрибутом артикула (SKU)."
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,6 +7,8 @@
                  start-page="api.topic">
 
     <toc-element topic="api.topic"/>
+    <toc-element topic="Shortened-syntetic-API-case.topic"/>
+    <toc-element topic="Syntetic-SDK-example.md"/>
     <toc-element topic="complex-api.md"/>
     <toc-element topic="Aliexpress-API-MD.md"/>
     <toc-element topic="Aliexpress-API.topic"/>

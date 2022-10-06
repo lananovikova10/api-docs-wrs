@@ -1,0 +1,72 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Swagger Test"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/v1/product/update-sku-stock": {
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfull"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema":
+          {
+            "type": "object",
+            "properties": {
+              "products": {
+                "type": "array",
+                "items":
+                {
+                  "type": "object",
+                  "properties": {
+                    "product_id": {
+                      "description": "",
+                      "type": "string",
+                      "format": "uint64"
+                    },
+                    "skus": {
+                      "type": "array",
+                      "items":
+                      {
+                        "type": "object",
+                        "properties": {
+                          "sku_code": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "inventory": {
+                            "description": "",
+                            "type": "string",
+                            "format": "uint64"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
