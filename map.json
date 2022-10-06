@@ -1,0 +1,9 @@
+{
+  "paths": {
+    "/api/v1/product/update-sku-stock": "Updates the number of instances of a product in stock by its SKU code."
+  },
+  "product_id": "A unique ID of the product in our system.",
+  "skus": "Product entities params array.",
+  "sku_code": "Product identifier at the warehouse: SKU or barcode.",
+  "inventory": "Number of items in stock."
+}

@@ -16,7 +16,7 @@
                 </td>
                 <td>
                     <p><format color="Gray">string</format> </p>
-                    <p>A unique product identifier in the client's system.</p>
+                    <p>A unique product identifier in our system.</p>
                 </td>
             </tr>
             <tr>
@@ -29,13 +29,13 @@
             </tr>
             <tr>
                 <td><p><code>sku_code</code></p></td>
-                <td><p>Product identifier on the warehouse: SKU or barcode.</p>
+                <td><p>Product identifier at the warehouse: SKU or barcode.</p>
                     <p><format color="Gray">string</format> </p></td>
             </tr>
             <tr>
                 <td><p><code>inventory</code></p></td>
                 <td><p>Number of items.</p>
-                    <p><format color="Gray">int</format> </p>
+                    <p><format color="Gray">int64</format> </p>
                 </td>
             </tr>
         </table>

@@ -18,7 +18,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successfull"
+            "description": "Successful response."
           }
         }
       },
@@ -31,34 +31,25 @@
           {
             "type": "object",
             "properties": {
-              "products": {
+              "product_id": {
+                "description": "",
+                "type": "string",
+                "format": "uint64"
+              },
+              "skus": {
                 "type": "array",
                 "items":
                 {
                   "type": "object",
                   "properties": {
-                    "product_id": {
+                    "sku_code": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "inventory": {
                       "description": "",
                       "type": "string",
                       "format": "uint64"
-                    },
-                    "skus": {
-                      "type": "array",
-                      "items":
-                      {
-                        "type": "object",
-                        "properties": {
-                          "sku_code": {
-                            "type": "string",
-                            "description": ""
-                          },
-                          "inventory": {
-                            "description": "",
-                            "type": "string",
-                            "format": "uint64"
-                          }
-                        }
-                      }
                     }
                   }
                 }
