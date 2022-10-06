@@ -5,7 +5,7 @@
        xsi:noNamespaceSchemaLocation="https://helpserver.labs.jb.gg/help/schemas/mvp/topic.v2.xsd"
        id="Shortened-syntetic-API-case"
        title="Shortened syntetic API case">
-    <chapter title="Update stocks">
+    <chapter title="Update stocks" id="update-stocks">
         <p><format style="bold" color="CornflowerBlue">POST</format><code>/api/v1/product/update-sku-stock</code></p>
         <p>Some method summary.</p>
             <table style="none">
@@ -20,24 +20,36 @@
                 </td>
             </tr>
             <tr>
-                <td rowspan="3"><code>skus</code>
+                <td><code>skus</code>
                     <p><format color="Crimson">required</format> </p>
                 </td>
                 <td>
+                    <p><format color="Gray">object</format> </p>
                     <p>Product entities params.</p>
                 </td>
             </tr>
-            <tr>
-                <td><p><code>sku_code</code></p></td>
-                <td><p>Product identifier at the warehouse: SKU or barcode.</p>
-                    <p><format color="Gray">string</format> </p></td>
-            </tr>
-            <tr>
-                <td><p><code>inventory</code></p></td>
-                <td><p>Number of items.</p>
-                    <p><format color="Gray">int64</format> </p>
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        <chapter collapsible="true">
+                            <table style="none">
+                                <tr>
+                                    <td>sku_code</td>
+                                    <td><p><format color="Gray">
+                                        string</format> </p>
+                                        <p>Product at the warehouse identifier: either SKU or barcode.</p></td>
+                                </tr>
+                                <tr>
+                                    <td>inventory</td>
+                                    <td><p><format color="Gray">
+                                        string</format> </p>
+                                        <p>Number of items available.</p></td>
+                                </tr>
+                            </table>
+                        </chapter>
+                    </td>
+                </tr>
         </table>
     </chapter>
 </topic>
